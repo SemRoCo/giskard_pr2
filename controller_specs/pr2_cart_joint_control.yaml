@@ -76,7 +76,7 @@ scope:
   - l_wrist_roll:
       frame: [{axis-angle: [unit_x, l_wrist_roll_joint]}, {vector3: [0, 0, 0]}]
   - l_gripper_offset:
-      frame: [{axis-angle: [unit_x, 0]}, {vector3: [0.216, 0, 0]}]
+      frame: [{axis-angle: [unit_x, 0]}, {vector3: [0.18, 0, 0]}]
 
   # definition of elbow FK
   - left_elbow:

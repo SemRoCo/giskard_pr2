@@ -8,8 +8,8 @@
     uri: https://github.com/SemRoCo/giskard_core.git
     version: master
 - git:
-    local-name: giskard_boxy
-    uri: https://github.com/SemRoCo/giskard_boxy.git
+    local-name: giskard_pr2
+    uri: https://github.com/SemRoCo/giskard_pr2.git
     version: master
 - git:
     local-name: giskard_ros
@@ -18,10 +18,6 @@
 - git:
     local-name: giskard_msgs
     uri: https://github.com/SemRoCo/giskard_msgs.git
-    version: master
-- git:
-    local-name: iai_boxy_sim
-    uri: https://github.com/code-iai/iai_boxy_sim.git
     version: master
 - git:
     local-name: iai_naive_kinematics_sim
@@ -34,4 +30,8 @@
 - git:
     local-name: qpoases
     uri: https://github.com/SemRoCo/qpOASES.git
+    version: master
+- git:
+    local-name: iai_pr2
+    uri: https://github.com/code-iai/iai_pr2.git
     version: master

@@ -1,27 +1,56 @@
 <launch>
   <arg name="sim" default="true" />
 
-  <node pkg="giskard_ros" type="whole_body_controller" name="whole_body_controller" output="screen">
-    <rosparam command="load"
-      file="$(find giskard_pr2)/config/pr2_whole_body_controller.yaml"/>
-    <param name="controller_descriptions/cart_cart" 
-      textfile="$(find giskard_pr2)/controller_specs/pr2_cart_cart_control.yaml" />
-    <param name="controller_descriptions/joint_joint" 
-      textfile="$(find giskard_pr2)/controller_specs/pr2_joint_joint_control.yaml" />
-    <param name="controller_descriptions/joint_cart" 
-      textfile="$(find giskard_pr2)/controller_specs/pr2_joint_cart_control.yaml" />
-    <param name="controller_descriptions/cart_joint" 
-      textfile="$(find giskard_pr2)/controller_specs/pr2_cart_joint_control.yaml" />
-    <remap from="~joint_states" to="/joint_states" if="$(arg sim)" />
-    <remap from="~joint_states" to="/joint_states" unless="$(arg sim)" />
-    <remap from="~velocity_cmd" to="/pr2/commands" />
-  </node>
+  <group if="$(arg sim)">
+    <node pkg="giskard_ros" type="whole_body_controller" name="whole_body_controller" output="screen">
+      <rosparam command="load"
+		file="$(find giskard_pr2)/config/pr2_whole_body_controller.yaml"/>
+      <param name="controller_descriptions/cart_cart" 
+	     textfile="$(find giskard_pr2)/controller_specs/iai_pr2_cart_cart_control.yaml" />
+      <param name="controller_descriptions/joint_joint" 
+	     textfile="$(find giskard_pr2)/controller_specs/pr2_joint_joint_control.yaml" />
+      <param name="controller_descriptions/joint_cart" 
+	     textfile="$(find giskard_pr2)/controller_specs/pr2_joint_cart_control.yaml" />
+      <param name="controller_descriptions/cart_joint" 
+	     textfile="$(find giskard_pr2)/controller_specs/iai_pr2_cart_joint_control.yaml" />
+      <remap from="~joint_states" to="/joint_states" if="$(arg sim)" />
+      <remap from="~joint_states" to="/joint_states" unless="$(arg sim)" />
+      <remap from="~velocity_cmd" to="/pr2/commands" />
+    </node>
+    <node pkg="giskard_ros" type="float_array_separator" name="velocity_cmd_separator" output="screen">
+      <rosparam param="joint_names"
+		file="$(find giskard_pr2)/config/pr2_upper_body.yaml" />
+      <remap from="~input_array" to="/pr2/commands" />
+    </node>
+  </group>
+
+  <group unless="$(arg sim)" >
+    <node pkg="giskard_ros" type="whole_body_controller" name="whole_body_controller" output="screen">
+      <rosparam command="load"
+    file="$(find giskard_pr2)/config/pr2_whole_body_controller.yaml" />
+      <param name="controller_descriptions/cart_cart" 
+       textfile="$(find giskard_pr2)/controller_specs/iai_pr2_cart_cart_control.yaml" />
+      <param name="controller_descriptions/joint_joint" 
+       textfile="$(find giskard_pr2)/controller_specs/pr2_joint_joint_control.yaml" />
+      <param name="controller_descriptions/joint_cart" 
+       textfile="$(find giskard_pr2)/controller_specs/pr2_joint_cart_control.yaml" />
+      <param name="controller_descriptions/cart_joint" 
+       textfile="$(find giskard_pr2)/controller_specs/iai_pr2_cart_joint_control.yaml" />
+      <remap from="~joint_states" to="/joint_states" />
+    </node>
+    <node pkg="giskard_ros" type="float_array_separator" name="velocity_cmd_separator" output="screen">
+      <rosparam param="joint_names"
+    file="$(find giskard_pr2)/config/pr2_upper_body.yaml" />
+      <remap from="~input_array" to="/whole_body_controller/velocity_cmd" />
+    </node>
+
+  </group>
 
   <node pkg="giskard_ros" type="controller_action_server" name="controller_action_server" 
         output="screen">
     <remap from="~command" to="whole_body_controller/goal" />
     <remap from="~feedback" to="whole_body_controller/feedback" />
     <rosparam command="load"
-      file="$(find giskard_pr2)/config/pr2_controller_action_server.yaml" />
+	      file="$(find giskard_pr2)/config/pr2_controller_action_server.yaml" />
   </node>
 </launch>
