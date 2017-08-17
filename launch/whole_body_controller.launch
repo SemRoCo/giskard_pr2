@@ -17,11 +17,6 @@
       <remap from="~joint_states" to="/joint_states" unless="$(arg sim)" />
       <remap from="~velocity_cmd" to="/pr2/commands" />
     </node>
-    <node pkg="giskard_ros" type="float_array_separator" name="velocity_cmd_separator" output="screen">
-      <rosparam param="joint_names"
-		file="$(find giskard_pr2)/config/pr2_upper_body.yaml" />
-      <remap from="~input_array" to="/pr2/commands" />
-    </node>
   </group>
 
   <group unless="$(arg sim)" >
