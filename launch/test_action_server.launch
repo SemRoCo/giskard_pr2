@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="giskard_ros" type="controller_action_test_client" 
+        name="controller_action_test_client" output="screen" >
+    <rosparam command="load"
+      file="$(find giskard_boxy)/config/boxy_controller_action_test.yaml" />
+    <param name="goals/yaml" 
+      textfile="$(find giskard_boxy)/controller_specs/boxy_yaml_control.yaml" />
+  </node>
+</launch>
