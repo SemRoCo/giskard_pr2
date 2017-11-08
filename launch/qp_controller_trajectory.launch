@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="giskard_ros" type="qp_controller_trajectory" name="qp_controller"
+        output="screen">
+    <remap from="~follow_joint_trajectory" to="/whole_body_controller/follow_joint_trajectory" />
+    <remap from="~joint_states" to="/joint_states" />
+  </node>
+</launch>

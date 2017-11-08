@@ -2,21 +2,31 @@
   <arg name="sim" default="true" />
   <arg name="plot" default="false" />
   <arg name="rviz" default="true" />
+  <arg name="trajectory_controller" default="true" />
 
-  <group if="$(arg sim)" >
-    <include file="$(find iai_pr2_sim)/launch/pr2.launch" />
+  <group if="$(arg trajectory_controller)" >
+    <include file="$(find iai_pr2_sim)/launch/ros_control_sim.launch" />
+    <include file="$(find giskard_pr2)/launch/qp_controller_trajectory.launch" />
   </group>
 
-  <!-- TODO: instructions to start real pr2 -->
+  <group unless="$(arg trajectory_controller)" >
+    <group if="$(arg sim)" >
+      <include file="$(find iai_pr2_sim)/launch/pr2.launch" />
+    </group>
+  
+    <!-- TODO: instructions to start real pr2 -->
 
-  <include file="$(find giskard_pr2)/launch/whole_body_controller.launch" >
-    <arg name="sim" value="$(arg sim)" />
-  </include>
+    <include file="$(find giskard_pr2)/launch/whole_body_controller.launch" >
+      <arg name="sim" value="$(arg sim)" />
+    </include>
+  
+  </group>
 
+  <!-- TODO: get rid of plotting; use rosbag + PlotJuggler in the future -->
   <include file="$(find giskard_pr2)/launch/gui.launch" >
     <arg name="plot" value="$(arg plot)" />
     <arg name="sim" value="$(arg sim)" />
     <arg name="rviz" value="$(arg rviz)" />
   </include>
-  
+ 
 </launch>

@@ -16,7 +16,8 @@
   </node>
 
   <node pkg="rviz" type="rviz" name="rviz" if="$(arg rviz)"
-        args="-d $(find giskard_pr2)/config/interactive.rviz" />
+        args="-d $(find giskard_pr2)/config/interactive.rviz" 
+        required="true" />
 
   <group if="$(arg plot)" >
     <node pkg="giskard_ros" type="whole_body_plot.py" name="whole_body_plot" output="screen" />
