@@ -3,5 +3,11 @@
         output="screen">
     <remap from="~follow_joint_trajectory" to="/whole_body_controller/follow_joint_trajectory" />
     <remap from="~joint_states" to="/joint_states" />
+    <param name="root_link" value="base_footprint" />
+    <param name="default_joint_weight" value="0.001" />
+    <param name="joint_weigths/torso_lift_joint" value="0.01" />
+    <param name="default_joint_velocity" value="0.5" />
+    <param name="joint_velocity_limits/torso_lift_joint" value="0.01" />
+    <param name="sample_period" value="0.02" />
   </node>
 </launch>
