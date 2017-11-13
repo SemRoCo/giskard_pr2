@@ -3,6 +3,7 @@
         output="screen">
     <remap from="~follow_joint_trajectory" to="/whole_body_controller/follow_joint_trajectory" />
     <remap from="~joint_states" to="/joint_states" />
+    <remap from="~joint_trajectory_controller_state" to="/whole_body_controller/state" />
     <param name="root_link" value="base_footprint" />
     <param name="default_joint_weight" value="0.001" />
     <param name="joint_weigths/torso_lift_joint" value="0.01" />
