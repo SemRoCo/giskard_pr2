@@ -1,24 +1,50 @@
 <launch>
   <!-- convenience launch-file to start the PR2 with velocity-resolved controllers -->
   <arg name="sim" default="true" />
+  <arg name="trajectory_controller" default="true" />
 
-  <group if="$(arg sim)" >
-    <include file="$(find iai_naive_kinematics_sim)/launch/pr2.launch" />
+  <group if="$(arg trajectory_controller)" >
+
+    <group if="$(arg sim)" >
+      <!-- START SIMULATED PR2 WITH JOINT-TRAJECTORY INTERFACE -->
+      <include file="$(find iai_pr2_sim)/launch/ros_control_sim.launch" />
+    </group>
+    
+    <group unless="$(arg sim)" >
+      <!-- SPAWN JOINT-TRAJECTORY CONTROLLERS ON REAL PR2 -->
+      <!-- TODO: REFACTOR THIS INTO A LAUNCH-FILE IN A NEW PACKAGE IAI_PR2_CONTROLLER_CONFIGURATION -->
+      <rosparam command="load" file="$(find giskard_pr2)/controller_configurations/pr2_upper_body_controller.yaml" />
+    
+      <node pkg="pr2_controller_manager" type="unspawner" name="unspawner_position_controllers"
+            output="screen" args="l_arm_controller r_arm_controller torso_controller" />
+    
+      <node pkg="pr2_controller_manager" type="spawner" name="spawner_velocity_controllers" 
+            output="screen" args="upper_body_controller" />
+      
+    </group>
+
   </group>
 
-  <group unless="$(arg sim)" >
-    <rosparam command="load" file="$(find pr2_controller_configuration)/pr2_joint_velocity_controllers.yaml" />
+  <group unless="$(arg trajectory_controller)" >
+    <group if="$(arg sim)" >
+      <include file="$(find iai_naive_kinematics_sim)/launch/pr2.launch" />
+    </group>
   
-    <node pkg="pr2_controller_manager" type="unspawner" name="unspawner_position_controllers"
-          output="screen" args="l_arm_controller r_arm_controller torso_controller" />
+    <group unless="$(arg sim)" >
+      <rosparam command="load" file="$(find pr2_controller_configuration)/pr2_joint_velocity_controllers.yaml" />
+    
+      <node pkg="pr2_controller_manager" type="unspawner" name="unspawner_position_controllers"
+            output="screen" args="l_arm_controller r_arm_controller torso_controller" />
+    
+      <node pkg="pr2_controller_manager" type="spawner" name="spawner_velocity_controllers" output="screen"
+            args="torso_lift_velocity_controller l_elbow_flex_velocity_controller l_forearm_roll_velocity_controller l_shoulder_lift_velocity_controller l_shoulder_pan_velocity_controller l_upper_arm_roll_velocity_controller l_wrist_flex_velocity_controller l_wrist_roll_velocity_controller r_elbow_flex_velocity_controller r_forearm_roll_velocity_controller r_shoulder_lift_velocity_controller r_shoulder_pan_velocity_controller r_upper_arm_roll_velocity_controller r_wrist_flex_velocity_controller r_wrist_roll_velocity_controller" />
   
-    <node pkg="pr2_controller_manager" type="spawner" name="spawner_velocity_controllers" output="screen"
-          args="torso_lift_velocity_controller l_elbow_flex_velocity_controller l_forearm_roll_velocity_controller l_shoulder_lift_velocity_controller l_shoulder_pan_velocity_controller l_upper_arm_roll_velocity_controller l_wrist_flex_velocity_controller l_wrist_roll_velocity_controller r_elbow_flex_velocity_controller r_forearm_roll_velocity_controller r_shoulder_lift_velocity_controller r_shoulder_pan_velocity_controller r_upper_arm_roll_velocity_controller r_wrist_flex_velocity_controller r_wrist_roll_velocity_controller" />
-
-    <node pkg="giskard_ros" type="joint_state_separator" name="pr2_cmd_separator"
-          output="screen" >
-      <rosparam param="joint_names" file="$(find giskard_pr2)/config/pr2_upper_body.yaml" />
-      <remap from="~joint_states" to="/pr2/commands" />
-    </node>
+      <node pkg="giskard_ros" type="joint_state_separator" name="pr2_cmd_separator"
+            output="screen" >
+        <rosparam param="joint_names" file="$(find giskard_pr2)/config/pr2_upper_body.yaml" />
+        <remap from="~joint_states" to="/pr2/commands" />
+      </node>
+    </group>
   </group>
+
 </launch>

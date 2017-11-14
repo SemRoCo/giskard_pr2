@@ -4,13 +4,19 @@
   <arg name="rviz" default="true" />
   <arg name="trajectory_controller" default="true" />
 
+  <include file="$(find giskard_pr2)/launch/pr2.launch" >
+    <arg name="sim" value="$(arg sim)" />
+    <arg name="trajectory_controller" value="$(arg trajectory_controller)" />
+  </include>
+
   <group if="$(arg trajectory_controller)" >
-    <include file="$(find iai_pr2_sim)/launch/ros_control_sim.launch" />
+    <!-- TODO: create a new launch-file qp_controller.launch with parameter trajectory_controller -->
     <include file="$(find giskard_pr2)/launch/qp_controller_trajectory.launch" />
   </group>
 
   <group unless="$(arg trajectory_controller)" >
     <group if="$(arg sim)" >
+      <!-- TODO: move this into giskard_pr2/launch/pr2.launch -->
       <include file="$(find iai_pr2_sim)/launch/pr2.launch" />
     </group>
   
