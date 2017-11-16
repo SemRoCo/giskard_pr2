@@ -2,69 +2,377 @@
 <root>
  <tabbed_widget name="Main Window" parent="main_window">
   <plotmatrix tab_name="torso_lift_joint" rows="3" columns="1">
-   <plot row="0" col="0">
-    <range right="21.139653" bottom="-0.002397" top="0.102393" left="6.159782"/>
+   <plot col="0" row="0">
+    <range top="0.137307" right="13.130074" bottom="0.123195" left="0.000000"/>
     <limitY/>
-    <curve B="0" G="128" name="/whole_body_controller/state/actual/positions.0" R="0"/>
-    <curve B="255" G="0" name="/whole_body_controller/state/desired/positions.0" R="0"/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/actual/positions.0"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/positions.0"/>
     <transform value="noTransform"/>
    </plot>
-   <plot row="1" col="0">
-    <range right="21.139653" bottom="-0.000305" top="0.012512" left="6.159782"/>
+   <plot col="0" row="1">
+    <range top="0.010290" right="13.130074" bottom="-0.000251" left="0.000000"/>
     <limitY/>
-    <curve B="255" G="0" name="/whole_body_controller/state/actual/velocities.0" R="255"/>
-    <curve B="0" G="0" name="/whole_body_controller/state/desired/velocities.0" R="255"/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/actual/velocities.0"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/desired/velocities.0"/>
     <transform value="noTransform"/>
    </plot>
-   <plot row="2" col="0">
-    <range right="21.139653" bottom="-0.008927" top="0.003511" left="6.159782"/>
+   <plot col="0" row="2">
+    <range top="0.002705" right="13.130074" bottom="-0.000635" left="0.000000"/>
     <limitY/>
-    <curve B="128" G="0" name="/whole_body_controller/state/error/positions.0" R="0"/>
-    <curve B="128" G="128" name="/whole_body_controller/state/error/velocities.0" R="0"/>
-    <transform value="noTransform"/>
-   </plot>
-  </plotmatrix>
-  <plotmatrix tab_name="plot" rows="1" columns="1">
-   <plot row="0" col="0">
-    <range right="20.220145" bottom="0.000000" top="1.000000" left="5.239141"/>
-    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/error/positions.0"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/error/velocities.0"/>
     <transform value="noTransform"/>
    </plot>
   </plotmatrix>
-  <currentPlotMatrix index="0"/>
+  <plotmatrix tab_name="l_upper_arm_roll_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="1.068906" right="13.130074" bottom="1.044558" left="0.000000"/>
+    <limitY/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/actual/positions.8"/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/desired/positions.8"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.043962" right="13.130074" bottom="-0.004041" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/actual/velocities.8"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/velocities.8"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.043244" right="13.130074" bottom="-0.002381" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/error/positions.8"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/error/velocities.8"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_shoulder_pan_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="0.468932" right="13.130074" bottom="0.121990" left="0.000000"/>
+    <limitY/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/actual/positions.9"/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/desired/positions.9"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.006641" right="13.130074" bottom="-0.272286" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/actual/velocities.9"/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/desired/velocities.9"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.024875" right="13.130074" bottom="-0.268529" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/error/positions.9"/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/error/velocities.9"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_shoulder_lift_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="0.024045" right="13.130074" bottom="-0.017087" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/actual/positions.01"/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/desired/positions.01"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.000932" right="13.130074" bottom="-0.038192" left="0.000000"/>
+    <limitY/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/actual/velocities.01"/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/desired/velocities.01"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.003996" right="13.130074" bottom="-0.030406" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/error/positions.01"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/error/velocities.01"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_forearm_roll_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="0.577114" right="13.130074" bottom="0.533786" left="0.000000"/>
+    <limitY/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/actual/positions.11"/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/desired/positions.11"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.055935" right="13.130074" bottom="-0.001507" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/actual/velocities.11"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/velocities.11"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.055124" right="13.130074" bottom="-0.003639" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/error/positions.11"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/error/velocities.11"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_elbow_flex_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="-0.616188" right="13.130074" bottom="-0.844481" left="0.000000"/>
+    <limitY/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/actual/positions.21"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/desired/positions.21"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.237027" right="13.130074" bottom="-0.005781" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/actual/velocities.21"/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/desired/velocities.21"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.034529" right="13.130074" bottom="-0.013060" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/error/positions.21"/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/error/velocities.21"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_wrist_flex_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="-0.950042" right="13.130074" bottom="-1.093093" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/actual/positions.31"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/desired/positions.31"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.242219" right="13.130074" bottom="-0.008102" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/actual/velocities.31"/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/desired/velocities.31"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.238605" right="13.130074" bottom="-0.013155" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/error/positions.31"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/error/velocities.31"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_wrist_roll_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="-0.590178" right="8.037927" bottom="-0.648863" left="5.464476"/>
+    <limitY/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/actual/positions.41"/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/desired/positions.41"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.065629" right="8.037927" bottom="-0.018286" left="5.464476"/>
+    <limitY/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/actual/velocities.41"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/velocities.41"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.002634" right="8.037927" bottom="-0.016492" left="5.464476"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/error/positions.41"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/error/velocities.41"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <currentPlotMatrix index="7"/>
  </tabbed_widget>
  <tabbed_widget name="Main Window" parent="main_window">
   <plotmatrix tab_name="torso_lift_joint" rows="3" columns="1">
-   <plot row="0" col="0">
-    <range right="21.139653" bottom="-0.002397" top="0.102393" left="6.159782"/>
+   <plot col="0" row="0">
+    <range top="0.137307" right="13.130074" bottom="0.123195" left="0.000000"/>
     <limitY/>
-    <curve B="0" G="128" name="/whole_body_controller/state/actual/positions.0" R="0"/>
-    <curve B="255" G="0" name="/whole_body_controller/state/desired/positions.0" R="0"/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/actual/positions.0"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/positions.0"/>
     <transform value="noTransform"/>
    </plot>
-   <plot row="1" col="0">
-    <range right="21.139653" bottom="-0.000305" top="0.012512" left="6.159782"/>
+   <plot col="0" row="1">
+    <range top="0.010290" right="13.130074" bottom="-0.000251" left="0.000000"/>
     <limitY/>
-    <curve B="255" G="0" name="/whole_body_controller/state/actual/velocities.0" R="255"/>
-    <curve B="0" G="0" name="/whole_body_controller/state/desired/velocities.0" R="255"/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/actual/velocities.0"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/desired/velocities.0"/>
     <transform value="noTransform"/>
    </plot>
-   <plot row="2" col="0">
-    <range right="21.139653" bottom="-0.008927" top="0.003511" left="6.159782"/>
+   <plot col="0" row="2">
+    <range top="0.002705" right="13.130074" bottom="-0.000635" left="0.000000"/>
     <limitY/>
-    <curve B="128" G="0" name="/whole_body_controller/state/error/positions.0" R="0"/>
-    <curve B="128" G="128" name="/whole_body_controller/state/error/velocities.0" R="0"/>
-    <transform value="noTransform"/>
-   </plot>
-  </plotmatrix>
-  <plotmatrix tab_name="plot" rows="1" columns="1">
-   <plot row="0" col="0">
-    <range right="20.220145" bottom="0.000000" top="1.000000" left="5.239141"/>
-    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/error/positions.0"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/error/velocities.0"/>
     <transform value="noTransform"/>
    </plot>
   </plotmatrix>
-  <currentPlotMatrix index="0"/>
+  <plotmatrix tab_name="l_upper_arm_roll_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="1.068906" right="13.130074" bottom="1.044558" left="0.000000"/>
+    <limitY/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/actual/positions.8"/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/desired/positions.8"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.043962" right="13.130074" bottom="-0.004041" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/actual/velocities.8"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/velocities.8"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.043244" right="13.130074" bottom="-0.002381" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/error/positions.8"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/error/velocities.8"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_shoulder_pan_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="0.468932" right="13.130074" bottom="0.121990" left="0.000000"/>
+    <limitY/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/actual/positions.9"/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/desired/positions.9"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.006641" right="13.130074" bottom="-0.272286" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/actual/velocities.9"/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/desired/velocities.9"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.024875" right="13.130074" bottom="-0.268529" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/error/positions.9"/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/error/velocities.9"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_shoulder_lift_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="0.024045" right="13.130074" bottom="-0.017087" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/actual/positions.01"/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/desired/positions.01"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.000932" right="13.130074" bottom="-0.038192" left="0.000000"/>
+    <limitY/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/actual/velocities.01"/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/desired/velocities.01"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.003996" right="13.130074" bottom="-0.030406" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/error/positions.01"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/error/velocities.01"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_forearm_roll_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="0.577114" right="13.130074" bottom="0.533786" left="0.000000"/>
+    <limitY/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/actual/positions.11"/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/desired/positions.11"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.055935" right="13.130074" bottom="-0.001507" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/actual/velocities.11"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/velocities.11"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.055124" right="13.130074" bottom="-0.003639" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/error/positions.11"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/error/velocities.11"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_elbow_flex_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="-0.616188" right="13.130074" bottom="-0.844481" left="0.000000"/>
+    <limitY/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/actual/positions.21"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/desired/positions.21"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.237027" right="13.130074" bottom="-0.005781" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/actual/velocities.21"/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/desired/velocities.21"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.034529" right="13.130074" bottom="-0.013060" left="0.000000"/>
+    <limitY/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/error/positions.21"/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/error/velocities.21"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_wrist_flex_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="-0.950042" right="13.130074" bottom="-1.093093" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/actual/positions.31"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/desired/positions.31"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.242219" right="13.130074" bottom="-0.008102" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/actual/velocities.31"/>
+    <curve R="255" B="255" G="0" name="/whole_body_controller/state/desired/velocities.31"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.238605" right="13.130074" bottom="-0.013155" left="0.000000"/>
+    <limitY/>
+    <curve R="0" B="128" G="0" name="/whole_body_controller/state/error/positions.31"/>
+    <curve R="0" B="128" G="128" name="/whole_body_controller/state/error/velocities.31"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <plotmatrix tab_name="l_wrist_roll_joint" rows="3" columns="1">
+   <plot col="0" row="0">
+    <range top="-0.590178" right="8.037927" bottom="-0.648863" left="5.464476"/>
+    <limitY/>
+    <curve R="160" B="164" G="160" name="/whole_body_controller/state/actual/positions.41"/>
+    <curve R="128" B="0" G="0" name="/whole_body_controller/state/desired/positions.41"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range top="0.065629" right="8.037927" bottom="-0.018286" left="5.464476"/>
+    <limitY/>
+    <curve R="128" B="0" G="128" name="/whole_body_controller/state/actual/velocities.41"/>
+    <curve R="0" B="255" G="0" name="/whole_body_controller/state/desired/velocities.41"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range top="0.002634" right="8.037927" bottom="-0.016492" left="5.464476"/>
+    <limitY/>
+    <curve R="0" B="0" G="128" name="/whole_body_controller/state/error/positions.41"/>
+    <curve R="255" B="0" G="0" name="/whole_body_controller/state/error/velocities.41"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <currentPlotMatrix index="7"/>
  </tabbed_widget>
  <use_relative_time_offset enabled="1"/>
  <Plugins>
