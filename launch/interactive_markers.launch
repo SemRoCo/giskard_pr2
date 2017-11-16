@@ -1,8 +1,8 @@
 <launch>
 
-  <node pkg="giskard_ros" type="goal_marker_viz" name="command_viz" >
+  <!--node pkg="giskard_ros" type="goal_marker_viz" name="command_viz" >
     <remap from="~feedback" to="/whole_body_controller/feedback" />
-  </node>
+  </node-->
 
   <node pkg="giskard_ros" type="whole_body_interactive_markers" 
         name="whole_body_interactive_markers" output="screen">

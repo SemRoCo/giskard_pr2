@@ -10,7 +10,7 @@
 
     <!-- START JOINT-TRAJECTORY INTERFACE ON REAL PR2 -->
     <include unless="$(arg sim)"
-      file="$(find iai_pr2_controller_configuration)/launch/spawn_upper_body_controller.launch" />
+      file="$(find iai_pr2_controller_configuration)/launch/spawn_whole_body_controller.launch" />
 
   </group>
 

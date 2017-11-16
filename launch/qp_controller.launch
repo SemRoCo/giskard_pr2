@@ -8,6 +8,7 @@
       <remap from="~follow_joint_trajectory" to="/whole_body_controller/follow_joint_trajectory" />
       <remap from="~joint_states" to="/joint_states" />
       <remap from="~joint_trajectory_controller_state" to="/whole_body_controller/state" />
+
       <rosparam command="load" file="$(find giskard_pr2)/config/qp_controller_trajectory.yaml" />
     </node>
   </group>
