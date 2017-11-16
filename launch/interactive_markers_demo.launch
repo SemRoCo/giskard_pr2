@@ -2,12 +2,7 @@
   <arg name="sim" default="true" />
   <arg name="trajectory_controller" default="true" />
 
-  <include file="$(find giskard_pr2)/launch/pr2.launch" >
-    <arg name="sim" value="$(arg sim)" />
-    <arg name="trajectory_controller" value="$(arg trajectory_controller)" />
-  </include>
-
-  <include file="$(find giskard_pr2)/launch/qp_controller.launch" >
+  <include file="$(find giskard_pr2)/launch/pr2_qp_controller.launch" >
     <arg name="sim" value="$(arg sim)" />
     <arg name="trajectory_controller" value="$(arg trajectory_controller)" />
   </include>

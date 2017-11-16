@@ -1,5 +1,4 @@
 <launch>
-  <!-- convenience launch-file to start the PR2 with velocity-resolved controllers -->
   <arg name="sim" default="true" />
   <arg name="trajectory_controller" default="true" />
 
