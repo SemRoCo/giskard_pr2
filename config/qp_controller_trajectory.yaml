@@ -1,5 +1,6 @@
 root_link: base_footprint
 left_ee_tip_link: l_gripper_tool_frame
+right_ee_tip_link: r_gripper_tool_frame
 trans3d_control:
   enable_thresholding: true
   error_threshold: 0.05
