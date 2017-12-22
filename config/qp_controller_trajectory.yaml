@@ -1,4 +1,5 @@
 use_new_interface: false
+fill_velocity_values: false
 root_link: base_footprint
 left_ee_root_link: torso_lift_link
 left_ee_tip_link: l_gripper_tool_frame
