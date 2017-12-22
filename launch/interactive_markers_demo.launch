@@ -1,0 +1,12 @@
+<launch>
+  <arg name="sim" default="true" />
+  <arg name="trajectory_controller" default="true" />
+
+  <include file="$(find giskard_pr2)/launch/pr2_qp_controller.launch" >
+    <arg name="sim" value="$(arg sim)" />
+    <arg name="trajectory_controller" value="$(arg trajectory_controller)" />
+  </include>
+
+  <include file="$(find giskard_pr2)/launch/interactive_markers.launch" />
+ 
+</launch>

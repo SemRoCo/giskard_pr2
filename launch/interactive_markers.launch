@@ -1,22 +1,16 @@
 <launch>
-  <arg name="sim" default="true" />
-  <arg name="plot" default="false" />
-  <arg name="rviz" default="true" />
 
-  <group if="$(arg sim)" >
-    <include file="$(find iai_pr2_sim)/launch/pr2.launch" />
-  </group>
+  <!--node pkg="giskard_ros" type="goal_marker_viz" name="command_viz" >
+    <remap from="~feedback" to="/whole_body_controller/feedback" />
+  </node-->
 
-  <!-- TODO: instructions to start real pr2 -->
+  <node pkg="giskard_ros" type="whole_body_interactive_markers" 
+        name="whole_body_interactive_markers" output="screen">
+    <rosparam command="load"
+              file="$(find giskard_pr2)/config/pr2_interactive_markers.yaml" />
+  </node>
 
-  <include file="$(find giskard_pr2)/launch/whole_body_controller.launch" >
-    <arg name="sim" value="$(arg sim)" />
-  </include>
-
-  <include file="$(find giskard_pr2)/launch/gui.launch" >
-    <arg name="plot" value="$(arg plot)" />
-    <arg name="sim" value="$(arg sim)" />
-    <arg name="rviz" value="$(arg rviz)" />
-  </include>
-  
+  <node pkg="rviz" type="rviz" name="rviz" required="true"
+        args="-d $(find giskard_pr2)/config/interactive.rviz" />
+        
 </launch>
