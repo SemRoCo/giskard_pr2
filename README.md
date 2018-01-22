@@ -3,7 +3,7 @@
 Robot-specific configuration and launch-files to use giskard controllers on the PR2.
 
 ## Documentation
-The project website of Giskard, include documentation can be found at: <http://www.giskard.de>
+The project website of Giskard, including growing amount of documentation and tutorials can be found at: <http://www.giskard.de>
 
 ## Installation
 ### ROS Indigo and Ubuntu 14.04
