@@ -14,7 +14,7 @@
   </group>
 
   <group unless="$(arg trajectory_controller)" >
-    <node pkg="giskard_ros" type="whole_body_controller" name="whole_body_controller" output="screen">
+    <node pkg="giskard_ros" type="whole_body_controller" name="qp_controller" output="screen">
       <rosparam command="load"
       	file="$(find giskard_pr2)/config/pr2_whole_body_controller.yaml"/>
       <param name="controller_descriptions/cart_cart" 
@@ -26,22 +26,24 @@
       <param name="controller_descriptions/cart_joint" 
            textfile="$(find giskard_pr2)/controller_specs/iai_pr2_cart_joint_control.yaml" />
       <remap from="~joint_states" to="/joint_states" />
-      <remap from="~velocity_cmd" to="/pr2/commands" />
+      <remap from="~velocity_cmd" to="/whole_body_controller/velocity_controller/command" />
     </node>
 
-    <node pkg="giskard_ros" type="controller_action_server" name="controller_action_server" 
+    <node pkg="giskard_ros" type="controller_action_server" name="qp_controller_action_interface" 
           output="screen">
-      <remap from="~command" to="whole_body_controller/goal" />
-      <remap from="~feedback" to="whole_body_controller/feedback" />
+      <remap from="~command" to="qp_controller/goal" />
+      <remap from="~feedback" to="qp_controller/feedback" />
+      <remap from="~move" to="qp_controller/command" />
       <rosparam command="load"
   	      file="$(find giskard_pr2)/config/pr2_controller_action_server.yaml" />
     </node>
  
     <node unless="$(arg sim)" pkg="giskard_ros" type="float_array_separator" 
           name="velocity_cmd_separator" output="screen">
+      <!-- TODO: implement a controller plugin for the PR2 such that we can get rid of this node -->
       <rosparam param="joint_names"
                 file="$(find giskard_pr2)/config/pr2_upper_body.yaml" />
-      <remap from="~input_array" to="/whole_body_controller/velocity_cmd" />
+      <remap from="~input_array" to="/qp_controller_velocity/velocity_cmd" />
     </node>
   </group>
 

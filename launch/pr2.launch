@@ -16,7 +16,7 @@
   <group unless="$(arg trajectory_controller)" >
     <!-- START SIMULATED PR2 WITH INSTANTANEOUS VELOCITY INTERFACE -->
     <group if="$(arg sim)" >
-      <include file="$(find iai_pr2_sim)/launch/pr2.launch" />
+      <include file="$(find iai_pr2_sim)/launch/naive_kinematics_sim.launch" />
     </group>
   
     <!-- START INSTANTANEOUS VELOCITY INTERFACE ON REAL PR2 -->
