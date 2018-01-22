@@ -28,6 +28,6 @@ Replace indigo with kinetic for ROS kinetic + 16.04
 To get a quick intuition of the performance of the upper-body Cartesian control, you can run
 
 ```bash
-roslaunch giskard_pr2 interactive_markers.launch sim:=true
+roslaunch giskard_pr2 interactive_markers.launch_demo sim:=true
 ```
 That should bring up a kinematics-only simulation of PR2, the giskard controller, and rviz with interactive markers displayed. Pull on the markers to move the left or the right arm, respectively.
