@@ -2,6 +2,9 @@
 
 Robot-specific configuration and launch-files to use giskard controllers on the PR2.
 
+## Documentation
+The project website of Giskard, include documentation can be found at: <http://www.giskard.de>
+
 ## Installation
 ### ROS Indigo and Ubuntu 14.04
 Using ```catkin_tools``` and ```wstool``` in a new workspace, please run:
@@ -24,6 +27,8 @@ Replace indigo with kinetic for ROS kinetic + 16.04
 
 ## Playthings
 ### PR2 upper-body Cartesian Position Control: Using Interactive Markers
+
+![rviz view](https://raw.githubusercontent.com/SemRoCo/giskard_pr2/master/doc/pr2_interactive_markers.png)
 
 We created PR2 demonstations to give you a quick intution of how the upper-body Cartesian control works. The first demo assumes a velocity-resolved interface of the robot, while the second one assumes a trajectory interface as a low-level interface of the robot.
 
