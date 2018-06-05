@@ -6,20 +6,17 @@ left_ee_tip_link: l_gripper_tool_frame
 right_ee_root_link: torso_lift_link
 right_ee_tip_link: r_gripper_tool_frame
 trans3d_control:
-  enable_thresholding: true
-  error_threshold: 0.05
   p_gain: 3.0
   weight: 1.0
+  max_speed: 0.3
 rot3d_control:
-  enable_thresholding: true
-  error_threshold: 0.1
   p_gain: 3.0
   weight: 1.0
+  max_speed: 1.0
 joint_control:
-  enable_thresholding: false
-  error_threshold: 0.0
   p_gain: 10.0
   weight: 1.0
+  max_speed: 1.0
 default_joint_weight: 0.001
 joint_weights:
   torso_lift_joint: 0.01
