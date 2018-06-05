@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>giskard_pr2</name>
-  <version>0.0.2</version>
+  <version>0.1.0</version>
   <description>
     Robot-specific configuration and launch-files to use giskard controllers on the pr2 robot.
   </description>
